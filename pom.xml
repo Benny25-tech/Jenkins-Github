@@ -30,7 +30,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
-        <version>3.3.1</version> <!-- Updated version -->
+        <version>3.3.1</version> <!-- Updated to 3.3.1 -->
         <exclusions>
           <exclusion>
             <groupId>org.codehaus.plexus</groupId>
