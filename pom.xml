@@ -7,6 +7,13 @@
   <version>0.0.2-SNAPSHOT</version>
   <name>jenkins-git-integration Maven Webapp</name>
   <url>http://maven.apache.org</url>
+
+  <properties>
+    <!-- Setting Java compatibility for Java 17 -->
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,14 +22,22 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>jenkins-git-integration</finalName>
     <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>3.3.0</version> <!-- Use a more recent version -->
-        </plugin>
+      <!-- Updated Maven WAR Plugin version -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.3.1</version> <!-- Updated version -->
+        <exclusions>
+          <exclusion>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+          </exclusion>
+        </exclusions>
+      </plugin>
     </plugins>
   </build>
 </project>
